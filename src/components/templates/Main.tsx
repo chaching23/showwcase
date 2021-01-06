@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { RouteProps, RouterProps, RouteComponentProps } from "react-router-dom";
 import { setUserName } from "../../store/slices/userSlice";
 import Container from "../atoms/Container";
+import DisplaySchool from "../organisms/DisplaySchool";
 import IntroSchool from "../organisms/IntroSchool";
 
 const Main: FC<RouteComponentProps> = ({ history }) => {
@@ -12,6 +13,7 @@ const Main: FC<RouteComponentProps> = ({ history }) => {
     <div>
       <Container variant="center">
         <IntroSchool />
+        <DisplaySchool />
       </Container>
     </div>
   );

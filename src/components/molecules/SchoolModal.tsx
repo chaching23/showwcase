@@ -4,19 +4,12 @@ import Title from "../atoms/Title";
 import Modal from "../atoms/Modal";
 import AsyncSelect from "react-select/async";
 import Button from "../atoms/Button";
+import { ISchoolState } from "../../types/school.types";
 
 interface Props {
   modalIsOpen: boolean;
   closeModal: () => void;
   submitHandler: (data: any) => void;
-}
-
-interface IState {
-  degree: string;
-  field: string;
-  grade: string;
-  description: string;
-  school: { value: string; label: string } | null;
 }
 
 const InitialValue = {
@@ -28,7 +21,7 @@ const InitialValue = {
 };
 
 const SchoolModal: FC<Props> = ({ closeModal, modalIsOpen, submitHandler }) => {
-  const [values, setValues] = useState<IState>(InitialValue);
+  const [values, setValues] = useState<ISchoolState>(InitialValue);
 
   const handleSetState = (key: string, value: any) => {
     setValues((prev) => ({
