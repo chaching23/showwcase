@@ -12,11 +12,18 @@ const SchoolCard: FC<Props> = ({
   field,
   grade,
   description,
+  id,
+  start,
+  end,
 }) => {
   console.log(school);
   return (
-    <Card>
+    <Card id={id}>
       <Title variant="small"> {school} </Title>
+      <Label>
+        {" "}
+        {start} - {end}{" "}
+      </Label>
       <Label> {degree} </Label>
       <Label> {field} </Label>
       <Label> {grade} </Label>

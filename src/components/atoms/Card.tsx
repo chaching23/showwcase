@@ -8,6 +8,7 @@ const Card = styled.div<Props>`
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   margin-bottom: 10px;
+  width: 100%;
   ${color};
 `;
 

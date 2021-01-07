@@ -1,8 +1,6 @@
 import React, { FC } from "react";
-import Card from "../atoms/Card";
-import Title from "../atoms/Title";
 import { ISchool } from "../../types/school.types";
-import Label from "../atoms/Label";
+import { NavHashLink } from "react-router-hash-link";
 
 interface Props {
   schools: ISchool[];
@@ -10,13 +8,26 @@ interface Props {
 
 const Sidebar: FC<Props> = ({ schools }) => {
   return (
-    <Card>
+    <div
+      style={{
+        width: "300px",
+        backgroundColor: "#ddd",
+        minHeight: "40vh",
+        padding: "10px",
+      }}
+    >
       <div style={{ display: "flex", flexDirection: "column" }}>
         {schools.map((school: ISchool) => (
-          <a>{school.school}</a>
+          <NavHashLink
+            to={`/dashboard#${school.id}`}
+            // activeClassName="selected-hash"
+            activeStyle={{ fontWeight: "bold" }}
+          >
+            {school.school}
+          </NavHashLink>
         ))}
       </div>
-    </Card>
+    </div>
   );
 };
 

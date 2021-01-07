@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { ISchool } from "../../types/school.types";
 import SchoolCard from "../molecules/SchoolCard";
 import Sidebar from "../molecules/SideBar";
-
 interface Props {}
 
 const DisplaySchool: FC<Props> = ({}) => {
@@ -11,11 +10,16 @@ const DisplaySchool: FC<Props> = ({}) => {
     ({ schools }) => schools
   );
   return (
-    <div style={{ display: "flex" }}>
-      <div>
-        <Sidebar {...{ schools }} />
-      </div>
-      <div style={{}}>
+    <div style={{ display: "flex", marginTop: "50px", width: "90vw" }}>
+      <Sidebar {...{ schools }} />
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          padding: "0 10px",
+        }}
+      >
         {schools.map((school: ISchool) => (
           <SchoolCard {...school} />
         ))}

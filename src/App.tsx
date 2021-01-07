@@ -3,13 +3,14 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./components/templates/Home";
 import Main from "./components/templates/Main";
+import PrivateRoute from "./components/utils/PrivateRoute";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/dashboard" exact component={Main} />
+        <PrivateRoute path="/dashboard" exact component={Main} />
         <Route
           path="*"
           component={() => (
